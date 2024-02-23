@@ -41,7 +41,7 @@ export default function WelcomePageVideo() {
       </div>
       <div
         ref={textRef}
-        className={`${crewTextVisible ? "" : "-translate-x-6 opacity-0"} flex max-w-[600px] flex-col px-6 pt-10 transition delay-500 duration-1000 lg:w-1/2 lg:p-0 lg:pl-10 lg:transition-none`}
+        className={`${crewTextVisible ? "" : "-translate-x-6 opacity-0"} flex max-w-[600px] flex-col px-6 pt-10 transition delay-200 duration-1000 lg:w-1/2 lg:p-0 lg:pl-10 lg:transition-none`}
       >
         <p className="px-3 font-inter text-4xl tracking-wider text-white antialiased">
           Notre équipe vous propose:

@@ -33,7 +33,7 @@ export default function WelcomePageCrew() {
     <div className="flex justify-center bg-[#FAF9F6] px-6 py-6 lg:py-16">
       <div className="flex flex-col-reverse items-center justify-between lg:w-[1200px] lg:flex-row">
         <div
-          className={`${crewTextVisible ? "" : "translate-y-6 opacity-0"} flex h-full w-full flex-col items-center justify-around transition delay-500 duration-1000 lg:transition-none`}
+          className={`${crewTextVisible ? "" : "translate-y-6 opacity-0"} flex h-full w-full flex-col items-center justify-around transition delay-200 duration-1000 lg:transition-none`}
         >
           <div
             ref={textRef}

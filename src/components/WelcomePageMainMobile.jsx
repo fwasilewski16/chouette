@@ -7,15 +7,15 @@ import locationIcon from "../assets/icons/location-pin.png";
 
 export default function WelcomePageMainMobile() {
   return (
-    <div className="flex flex-col items-center bg-[#FAF9F6]">
-      <div className="sticky top-[68px] mx-3 mt-4 flex h-[250px] justify-center overflow-hidden md:h-fit">
+    <div className="flex flex-col items-center">
+      <div className="sticky top-[52px] -z-20 flex h-[250px] justify-center overflow-hidden px-3 pt-4 md:h-fit">
         <img src={mainPage1} className="h-[100%] rounded-lg object-cover" />
       </div>
       <div className="relative z-10 flex w-full flex-col items-center justify-center gap-3 bg-[#FAF9F6] px-3 pb-6 md:h-[380px] md:gap-5">
-        <div className="absolute left-0 right-0 top-0 -z-10 -mt-5 flex h-12 justify-center overflow-hidden md:-mt-7">
+        <div className="absolute left-0 right-0 top-0 -mt-5 flex h-12 justify-center overflow-hidden md:-mt-7">
           <div className="min-h-[calc(100vw*8)] min-w-[calc(100vw*8)] rounded-full bg-[#FAF9F6]" />
         </div>
-        <p className="max-w-[461px] text-center font-inter text-3xl tracking-wider md:max-w-[600px] md:text-4xl">
+        <p className="z-10 max-w-[461px] text-center font-inter text-3xl tracking-wider md:max-w-[600px] md:text-4xl">
           Bienvenue!
         </p>
         <p className="max-w-[461px] text-center font-inter text-sm leading-[22px] tracking-wider md:max-w-[600px] md:text-lg">
