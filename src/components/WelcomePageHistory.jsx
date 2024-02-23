@@ -19,7 +19,7 @@ export default function WelcomePageHistory() {
       <div className="mx-6 flex w-full max-w-[539px] justify-center lg:max-w-[1200px]">
         <div
           ref={textRef}
-          className={`${crewTextVisible ? "" : "translate-x-6 opacity-0 lg:-translate-x-6"} flex flex-col gap-4 transition delay-500 duration-1000 lg:w-1/2 lg:gap-16 lg:px-0`}
+          className={`${crewTextVisible ? "" : "translate-x-6 opacity-0"} flex flex-col gap-4 transition delay-500 duration-1000 lg:w-1/2 lg:gap-16 lg:px-0 lg:transition-none`}
         >
           <h2 className="text-left font-inter text-4xl tracking-wider text-gray-700 antialiased lg:text-center lg:text-5xl">
             Notre histoire
