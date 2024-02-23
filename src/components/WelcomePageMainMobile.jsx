@@ -8,7 +8,7 @@ import locationIcon from "../assets/icons/location-pin.png";
 export default function WelcomePageMainMobile() {
   return (
     <div className="flex flex-col items-center">
-      <div className="sticky top-[52px] -z-20 flex h-[250px] justify-center overflow-hidden px-3 pt-4 md:h-fit">
+      <div className="sticky top-[52px] -z-20 flex h-[250px] w-full justify-center overflow-hidden bg-[#FAF9F6] px-3 pt-4 md:h-fit">
         <img src={mainPage1} className="h-[100%] rounded-lg object-cover" />
       </div>
       <div className="relative z-10 flex w-full flex-col items-center justify-center gap-3 bg-[#FAF9F6] px-3 pb-6 md:h-[380px] md:gap-5">
