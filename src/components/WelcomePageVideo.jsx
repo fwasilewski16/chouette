@@ -37,6 +37,7 @@ export default function WelcomePageVideo() {
             marginLeft: "24px",
           }}
           src="https://www.youtube.com/embed/hiMzDGW6PY4?si=mlsvWgO-br6UNiMn"
+          allowFullScreen
         />
       </div>
       <div
