@@ -19,13 +19,13 @@ export default function MobileMenuButton(props) {
     >
       <div className="flex h-full flex-col justify-center">
         <div
-          className={`${props.mobileMenuAnimation && "translate-y-[2px] rotate-45"} h-[2px] w-8 rounded-lg bg-white transition-all duration-500`}
+          className={`${props.mobileMenuAnimation && "translate-y-[2px] rotate-45"} h-[2px] w-9 rounded-lg bg-white transition-all duration-500`}
         />
         <div
-          className={`${props.mobileMenuAnimation ? "my-0 opacity-0" : "my-[8px]"} h-[2px] w-8 rounded-lg bg-white transition-all duration-500`}
+          className={`${props.mobileMenuAnimation ? "my-0 opacity-0" : "my-[8px]"} h-[2px] w-9 rounded-lg bg-white transition-all duration-500`}
         />
         <div
-          className={`${props.mobileMenuAnimation && "-translate-y-[2px] -rotate-45"} h-[2px] w-8 rounded-lg bg-white transition-all duration-500`}
+          className={`${props.mobileMenuAnimation && "-translate-y-[2px] -rotate-45"} h-[2px] w-9 rounded-lg bg-white transition-all duration-500`}
         />
       </div>
     </div>

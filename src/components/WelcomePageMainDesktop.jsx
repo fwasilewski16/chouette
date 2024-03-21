@@ -30,7 +30,7 @@ export default function WelcomePageMainDesktop() {
   }, [image]);
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden">
+    <div className="relative flex h-[calc(100vh-55px)] flex-col overflow-hidden">
       <div
         className={`${image === mainPage1 ? "opacity-100" : "opacity-0"} absolute bottom-0 left-0 right-0 top-0 transition duration-1000`}
       >
@@ -41,20 +41,20 @@ export default function WelcomePageMainDesktop() {
       >
         <img src={mainPage2} className="h-full w-full object-cover" />
       </div>
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-black opacity-45" />
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-black opacity-55" />
       <div className="z-20 h-full">
         <div
           className={`flex h-full flex-col items-center justify-center text-white ${!textVisible && "opacity-0"} transition-all duration-1000`}
         >
           <div className="flex max-w-[600px] flex-col items-center justify-center gap-7 px-5 pt-5">
-            <h2 className="text-center font-inter text-6xl font-light tracking-wider antialiased">
+            <h2 className="text-center font-inter text-5xl tracking-wider antialiased">
               Bienvenue !
             </h2>
-            <p className="text-center font-inter font-light leading-[22px] tracking-widest antialiased">
+            <p className="text-center font-inter leading-[22px] tracking-wider antialiased">
               Depuis janvier 2012 Chouette On Apprend oeuvre pour le respect des
               différences, l'autonomie et l'épanouissement.
             </p>
-            <p className="text-center font-inter font-light leading-[22px] tracking-widest antialiased">
+            <p className="text-center font-inter leading-[22px] tracking-wider antialiased">
               Notre association porte des valeurs de partage et d'ouverture pour
               transmettre le plaisir d'apprendre.
             </p>
@@ -62,13 +62,13 @@ export default function WelcomePageMainDesktop() {
           <div className="flex w-full max-w-[600px] flex-col gap-7 pb-5 pt-7">
             <div className="flex items-center justify-center gap-2">
               <img src={locationIcon} className="h-5" />
-              <p className="text-center text-sm tracking-widest antialiased">
+              <p className="text-center text-sm tracking-wider antialiased">
                 Paris
               </p>
             </div>
             <div className="flex items-center justify-center gap-2">
               <img src={emailIcon} className="h-5" />
-              <p className="text-center text-sm tracking-widest antialiased">
+              <p className="text-center text-sm tracking-wider antialiased">
                 contact@chouetteonapprend.org
               </p>
             </div>

@@ -2,7 +2,7 @@ import Button from "../UI/Button";
 
 function InstagramPhoto() {
   return (
-    <div className="aspect-square w-1/2 px-1 lg:w-1/3">
+    <div className="relative z-10 aspect-square w-1/2 px-1 lg:w-1/3">
       <div className="flex aspect-square w-full flex-col justify-end  bg-gray-300 px-1 pb-4">
         <p className="text-sm text-white antialiased">INSTAGRAM POST TITLE</p>
         <p className="text-sm text-white antialiased">
