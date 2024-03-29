@@ -15,7 +15,7 @@ function InstagramPhoto() {
 
 export default function WelcomePageInstagram() {
   return (
-    <div className="flex w-full justify-center bg-[#FAF9F6]">
+    <div className="flex w-full justify-center bg-[#ffae450c]">
       <div className="flex w-full max-w-[600px] justify-center px-2 lg:max-w-full">
         <div className="max-w-[1200px] lg:my-10">
           <div className="mx-3 flex flex-col">

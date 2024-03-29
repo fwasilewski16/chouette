@@ -7,21 +7,17 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        down: {
-          "0%": { transform: "translate(0,0)" },
-          "100%": { transform: "translate(0,-50px)" },
-        },
-        up: {
-          "0%": { transform: "translate(0,-50px)" },
-          "100%": { transform: "translate(0,0)" },
+        zoom: {
+          "0%": { transform: "scale(1,1)" },
+          "100%": { transform: "scale(1.15,1.15)" },
         },
       },
       animation: {
-        "scrollDown": "down 13s linear infinite",
-        "scrollUp": "up 15s linear infinite"
+        "zoomIn": "zoom 12s linear infinite",
       },
       fontFamily: {
-        inter: "Inter",
+        kadwa: "Kadwa",
+        inter: "Inter"
       }
     },
   },

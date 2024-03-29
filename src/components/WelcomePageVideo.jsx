@@ -1,21 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "../UI/Button";
-import history2 from "../assets/history2.png";
+import icon1 from "../assets/icons/psychology.png";
+import icon2 from "../assets/icons/paint.png";
+import icon3 from "../assets/icons/relieved.png";
+import icon4 from "../assets/icons/family.png";
+import icon5 from "../assets/icons/graduation-cap.png";
+import icon6 from "../assets/icons/speech-bubble.png";
 
 function ListItem(props) {
   return (
-    <li className="flex min-h-[54px] items-center lg:pl-3">
-      <div className="h-8 w-[3px] -translate-x-1 bg-[#F7BB01] lg:h-6 lg:-translate-x-0" />
-      <p className="pl-3 text-left text-sm tracking-widest text-white antialiased lg:pl-6">
-        {props.children}
-      </p>
+    <li className="min-h-full max-w-[350px] items-center p-2 md:w-1/3 md:max-w-none">
+      <div
+        className={`flex flex-col items-center gap-2 rounded-xl px-2 py-5 md:h-[230px] lg:h-[190px] ${props.colour} border-2`}
+      >
+        <img src={props.icon} className="h-16" />
+        <p className="text-center text-[16px] tracking-wide antialiased">
+          {props.children}
+        </p>
+      </div>
     </li>
   );
 }
 
 export default function WelcomePageVideo() {
   const [crewTextVisible, setCrewTextVisible] = useState(false);
-  const textRef = useRef();
+  const divRef = useRef();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -23,50 +32,46 @@ export default function WelcomePageVideo() {
       entry ? setCrewTextVisible(true) : setCrewTextVisible(false);
     });
 
-    observer.observe(textRef.current);
+    observer.observe(divRef.current);
   }, []);
 
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center bg-slate-500 px-5">
-      <div className="flex w-full max-w-[539px] justify-center lg:max-w-[1200px]">
-        <div className="hidden w-1/2 items-center lg:my-24 lg:flex">
-          <img
-            src={history2}
-            className="z-10 h-full w-[80%] rounded-xl object-cover"
-          />
-        </div>
-        <div
-          ref={textRef}
-          className={`${crewTextVisible ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"} flex flex-col py-8 transition duration-1000 ease-in-out lg:my-24 lg:w-1/2 lg:p-0`}
-        >
-          <p className="px-3 font-inter text-3xl tracking-wider text-white antialiased lg:text-4xl">
-            Notre équipe vous propose:
-          </p>
-          <ul className="flex h-full list-inside list-none flex-col justify-between py-5 text-justify font-inter">
-            <ListItem>
-              Des séances individuelles de médiation cognitive (méthode
-              Feuerstein, Raviv, Montessori)
-            </ListItem>
-            <ListItem>
-              Des séances de travail par le biais de l'expression artistique
-              (musique, sculpture, peinture, dessin)
-            </ListItem>
-            <ListItem>
-              Des séances qui incluent des temps de relaxation, de respiration
-              et de yoga
-            </ListItem>
-            <ListItem>
-              Des ateliers centrés sur la dynamique familiale (ateliers ados,
-              frères et soeurs et parents)
-            </ListItem>
-            <ListItem>
-              Des interventions dans les écoles (suivi pédagogique,
-              sensibilisation)
-            </ListItem>
-            <ListItem>
-              Des échanges réguliers avec les autres thérapeutes
-            </ListItem>
-          </ul>
+    <div
+      ref={divRef}
+      className="relative z-10 flex items-center justify-center bg-[#ffae450c]"
+    >
+      <div
+        className={`${crewTextVisible ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"} flex max-w-[1200px] flex-col gap-7 px-5 transition delay-100 duration-[1200ms] ease-in-out md:gap-14 lg:p-14`}
+      >
+        <p className="text-center font-inter text-4xl tracking-wider antialiased md:text-center md:text-5xl">
+          Notre équipe vous propose:
+        </p>
+        <ul className="flex h-full flex-col items-center text-justify font-inter md:flex-row md:flex-wrap md:items-start">
+          <ListItem colour={"bg-purple-100 border-purple-300"} icon={icon1}>
+            Des séances individuelles de médiation cognitive (méthode
+            Feuerstein, Raviv, Montessori)
+          </ListItem>
+          <ListItem colour={"bg-yellow-100 border-yellow-300"} icon={icon2}>
+            Des séances de travail par le biais de l'expression artistique
+            (musique, sculpture, peinture, dessin)
+          </ListItem>
+          <ListItem colour={"bg-green-100 border-green-300"} icon={icon3}>
+            Des séances qui incluent des temps de relaxation, de respiration et
+            de yoga
+          </ListItem>
+          <ListItem colour={"bg-gray-100 border-gray-300"} icon={icon4}>
+            Des ateliers centrés sur la dynamique familiale (ateliers ados,
+            frères et soeurs et parents)
+          </ListItem>
+          <ListItem colour={"bg-sky-100 border-sky-300"} icon={icon5}>
+            Des interventions dans les écoles (suivi pédagogique,
+            sensibilisation)
+          </ListItem>
+          <ListItem colour={"bg-pink-100 border-pink-300"} icon={icon6}>
+            Des échanges réguliers avec les autres thérapeutes
+          </ListItem>
+        </ul>
+        <div className="flex w-full justify-center">
           <Button>Pédagogie</Button>
         </div>
       </div>

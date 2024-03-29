@@ -3,7 +3,7 @@ import InstagramIcon from "../assets/icons/instagram-white.png";
 
 export default function Footer() {
   return (
-    <div className="flex h-auto flex-col items-center gap-3 bg-[#F7BB01] py-3">
+    <div className="flex h-auto flex-col items-center gap-3 bg-[#FFAF45] py-3">
       <div className="flex items-center gap-5">
         <img src={facebookIcon} className="h-5" />
         <img src={InstagramIcon} className="h-5" />

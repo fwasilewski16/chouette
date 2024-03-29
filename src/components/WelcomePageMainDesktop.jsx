@@ -1,81 +1,63 @@
-import { useEffect, useState } from "react";
-
-import mainPage1 from "../assets/mainPage1.png";
-import mainPage2 from "../assets/mainPage2.png";
+import main1 from "../assets/images/main1.jpg";
+import main2 from "../assets/images/main2.jpg";
+import main3 from "../assets/images/main3.jpg";
 import facebookIcon from "../assets/icons/facebook-white.png";
 import InstagramIcon from "../assets/icons/instagram-white.png";
 import emailIcon from "../assets/icons/email-white.png";
 import locationIcon from "../assets/icons/location-pin-white.png";
+import logo from "../assets/logo.png";
 
 export default function WelcomePageMainDesktop() {
-  const [image, setImage] = useState(mainPage1);
-  const [textVisible, setTextVisible] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 250) {
-        setTextVisible(false);
-      } else {
-        setTextVisible(true);
-      }
-    });
-    setTimeout(() => {
-      if (image === mainPage1) {
-        setImage(mainPage2);
-      }
-      if (image === mainPage2) {
-        setImage(mainPage1);
-      }
-    }, 10000);
-  }, [image]);
-
   return (
-    <div className="relative flex h-[calc(100vh-55px)] flex-col overflow-hidden">
-      <div
-        className={`${image === mainPage1 ? "opacity-100" : "opacity-0"} absolute bottom-0 left-0 right-0 top-0 transition duration-1000`}
-      >
-        <img src={mainPage1} className="h-full w-full object-cover" />
+    <div className="relative mt-[-56px] flex h-[100vh] items-end justify-center overflow-hidden">
+      <div className="absolute h-full w-full">
+        {/* <img
+          src={main2}
+          className="min-h-full object-cover object-left-bottom"
+        /> */}
+        {/* <div className="relative h-full w-full">
+          <img
+            src={main1}
+            className="absolute left-1/2 top-1/2 min-h-full -translate-x-1/2 -translate-y-1/2 object-cover object-left-bottom"
+          />
+        </div> */}
+        <div className="relative h-full w-full">
+          <img
+            src={main3}
+            className="absolute left-1/2 top-1/2 min-h-full -translate-x-1/2 -translate-y-1/2 object-cover object-left-bottom"
+          />
+        </div>
       </div>
-      <div
-        className={`${image === mainPage2 ? "opacity-100" : "opacity-0"} absolute bottom-0 left-0 right-0 top-0 transition duration-1000`}
-      >
-        <img src={mainPage2} className="h-full w-full object-cover" />
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-black opacity-55" />
-      <div className="z-20 h-full">
-        <div
-          className={`flex h-full flex-col items-center justify-center text-white ${!textVisible && "opacity-0"} transition-all duration-1000`}
-        >
-          <div className="flex max-w-[600px] flex-col items-center justify-center gap-7 px-5 pt-5">
-            <h2 className="text-center font-inter text-5xl tracking-wider antialiased">
-              Bienvenue !
-            </h2>
-            <p className="text-center font-inter leading-[22px] tracking-wider antialiased">
-              Depuis janvier 2012 Chouette On Apprend oeuvre pour le respect des
-              différences, l'autonomie et l'épanouissement.
-            </p>
-            <p className="text-center font-inter leading-[22px] tracking-wider antialiased">
-              Notre association porte des valeurs de partage et d'ouverture pour
-              transmettre le plaisir d'apprendre.
+      <div className="z-10 w-full max-w-[1200px]">
+        <div className="flex w-1/2 flex-col items-center justify-center gap-4 rounded-t-[28px] bg-gradient-to-b from-[#ffae45cc] to-[#FFAF45] px-6 py-4 font-kadwa tracking-wide text-white">
+          <h2 className="w-full text-[60px] font-semibold leading-[64px] antialiased">
+            Bienvenue !
+          </h2>
+          <p className="text-[16px] antialiased">
+            Depuis janvier 2012 Chouette On Apprend oeuvre pour le respect des
+            différences, l'autonomie et l'épanouissement.
+          </p>
+          <p className="text-[16px] antialiased">
+            Notre association porte des valeurs de partage et d'ouverture pour
+            transmettre le plaisir d'apprendre.
+          </p>
+          <div className="flex w-full items-center justify-start gap-2">
+            <img src={locationIcon} className="h-4" />
+            <p className="text-[14px] antialiased">Paris</p>
+          </div>
+          <div className="flex w-full items-center gap-2">
+            <img src={emailIcon} className="h-4" />
+            <p className="text-[14px] antialiased">
+              contact@chouetteonapprend.org
             </p>
           </div>
-          <div className="flex w-full max-w-[600px] flex-col gap-7 pb-5 pt-7">
-            <div className="flex items-center justify-center gap-2">
-              <img src={locationIcon} className="h-5" />
-              <p className="text-center text-sm tracking-wider antialiased">
-                Paris
-              </p>
-            </div>
-            <div className="flex items-center justify-center gap-2">
-              <img src={emailIcon} className="h-5" />
-              <p className="text-center text-sm tracking-wider antialiased">
-                contact@chouetteonapprend.org
-              </p>
-            </div>
-            <div className="flex items-center justify-center gap-8 pt-1">
-              <img src={facebookIcon} className="h-6" />
-              <img src={InstagramIcon} className="h-6" />
-            </div>
+          <div className="relative flex w-full justify-start gap-10">
+            <img src={facebookIcon} className="h-6" />
+            <img src={InstagramIcon} className="h-6" />
+            <img
+              src={logo}
+              className="absolute bottom-0 right-0 h-20 -scale-x-100 invert"
+            />
           </div>
         </div>
       </div>

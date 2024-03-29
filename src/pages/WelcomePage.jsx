@@ -23,14 +23,8 @@ export default function WelcomePage() {
     <>
       {width <= 1024 ? <WelcomePageMainMobile /> : <WelcomePageMainDesktop />}
       <div>
-        <div className="hidden lg:block">
-          <WelcomePageHistory />
-          <WelcomePageVideo />
-        </div>
-        <div className="lg:hidden">
-          <WelcomePageVideo />
-          <WelcomePageHistory />
-        </div>
+        <WelcomePageHistory />
+        <WelcomePageVideo />
         <WelcomePageCrew />
         <WelcomePageInstagram />
       </div>
