@@ -38,7 +38,7 @@ function InstagramPhoto() {
 
 export default function WelcomePageInstagram() {
   return (
-    <div className="relative flex w-full justify-center bg-[#fffcf9]">
+    <div className="relative flex w-full justify-center overflow-hidden bg-[#fffcf9]">
       <div className="absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 justify-center">
         <ShapeSVG2 />
       </div>
