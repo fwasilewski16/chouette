@@ -1,7 +1,7 @@
 export default function MobileMenuButton(props) {
   return (
     <div
-      className="flex justify-end px-3"
+      className="flex justify-end rounded-b-xl bg-[#f9ab48] px-3 xl:hidden"
       onClick={() => {
         if (!props.mobileMenuVisible) {
           props.setMobileMenuVisible(true);

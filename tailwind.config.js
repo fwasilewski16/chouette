@@ -16,8 +16,7 @@ export default {
         "zoomIn": "zoom 12s linear infinite",
       },
       fontFamily: {
-        kadwa: "Kadwa",
-        inter: "Inter"
+        montserrat: "Montserrat",
       }
     },
   },
