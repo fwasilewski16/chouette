@@ -3,7 +3,7 @@ import nosAteliers2 from "../assets/images/nosAteliers2.jpg";
 
 export default function NosAteliersPage() {
   return (
-    <section className="flex flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat tracking-wide antialiased">
+    <section className="flex flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat tracking-wide antialiased xl:min-h-[calc(100dvh-80px-40px)]">
       <h1 className="bg-[#AF45FF] py-6 text-center text-4xl text-white lg:text-5xl">
         Nos Ateliers
       </h1>
