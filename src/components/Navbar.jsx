@@ -44,9 +44,11 @@ export default function Navbar() {
         >
           <img
             src={logo}
-            className="h-[50px] object-cover py-1 pl-3 xl:h-[70px]"
+            width={500}
+            height={367}
+            className="h-[50px] w-auto object-cover py-1 pl-3 xl:h-[70px]"
           />
-          <div className="ml-1 mr-3 h-[40px] w-[2px] bg-white xl:h-[50px]" />
+          <div className="ml-1 mr-3 h-[40px] min-w-[2px] bg-white xl:h-[50px]" />
           <div className="flex min-w-[148px] flex-col font-montserrat text-xl font-medium uppercase tracking-wide text-white antialiased">
             <p>Chouette</p>
             <p>On Apprend</p>

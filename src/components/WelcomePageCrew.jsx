@@ -82,9 +82,11 @@ export default function WelcomePageCrew() {
           className={`relative flex max-w-[600px] items-center justify-center pt-10 lg:w-1/2 lg:py-0 ${crewTextVisible ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"} transition duration-[1200ms] ease-in-out`}
         >
           <img
+            width={539}
+            height={720}
             loading="lazy"
             src={crew}
-            className="w-4/5 rounded-2xl object-cover"
+            className="h-auto w-4/5 rounded-2xl object-cover"
           />
           <div className="absolute left-1/2 top-1/2 -z-20 w-[140%] -translate-x-1/2 -translate-y-1/2">
             <ShapeSVG />

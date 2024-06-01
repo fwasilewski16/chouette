@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <section className="flex flex-col bg-[#fffcf9] font-montserrat font-medium tracking-wide text-black antialiased">
+    <section className="flex flex-col bg-[#fffcf9] font-montserrat tracking-wide text-black antialiased xl:min-h-[calc(100dvh-80px-40px)]">
       <h1 className="bg-[#AF45FF] py-6 text-center text-4xl text-white lg:text-5xl">
         Contactez-nous
       </h1>

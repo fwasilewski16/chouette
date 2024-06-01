@@ -19,11 +19,21 @@ export default function WelcomePageMainDesktop() {
             transmettre le plaisir d'apprendre.
           </p>
           <div className="flex w-full items-center justify-start gap-2">
-            <img src={locationIcon} className="h-4" />
+            <img
+              src={locationIcon}
+              className="h-4 w-auto"
+              width={512}
+              height={512}
+            />
             <p>Paris</p>
           </div>
           <div className="flex w-full items-center gap-2">
-            <img src={emailIcon} className="h-4" />
+            <img
+              src={emailIcon}
+              className="h-4 w-auto"
+              width={512}
+              height={512}
+            />
             <p>contact@chouetteonapprend.org</p>
           </div>
           <div className="relative flex w-full justify-start gap-10">
@@ -31,7 +41,9 @@ export default function WelcomePageMainDesktop() {
             <img src={InstagramIcon} className="h-6" />
             <img
               src={logo}
-              className="absolute bottom-0 right-0 hidden h-20 -scale-x-100 lg:block"
+              width={500}
+              height={367}
+              className="absolute bottom-0 right-0 hidden h-20 w-auto -scale-x-100 lg:block"
             />
           </div>
         </div>

@@ -19,7 +19,7 @@ function PedagogieSingle(props) {
 
 export default function PedagogiePage() {
   return (
-    <section className="flex min-h-[calc(100dvh-60px-97px)] flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat font-medium tracking-wide antialiased">
+    <section className="flex min-h-[calc(100dvh-60px-97px)] flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat tracking-wide antialiased">
       <h1 className="bg-[#AF45FF] py-6 text-center text-4xl text-white lg:text-5xl">
         Notre pédagogie
       </h1>

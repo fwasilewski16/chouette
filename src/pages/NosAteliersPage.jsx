@@ -3,16 +3,18 @@ import nosAteliers2 from "../assets/images/nosAteliers2.jpg";
 
 export default function NosAteliersPage() {
   return (
-    <section className="flex flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat font-medium tracking-wide antialiased">
+    <section className="flex flex-col gap-10 bg-[#fffcf9] pb-10 font-montserrat tracking-wide antialiased">
       <h1 className="bg-[#AF45FF] py-6 text-center text-4xl text-white lg:text-5xl">
         Nos Ateliers
       </h1>
       <div className="flex w-full flex-col items-center gap-20">
-        <div className="flex w-full max-w-[1200px] flex-col-reverse items-center px-4 lg:flex-row">
+        <div className="flex w-full max-w-[1100px] flex-col-reverse items-center px-4 lg:flex-row">
           <div className="flex w-2/3 justify-center pt-10 lg:w-1/2 lg:p-0">
             <img
-              className="aspect-square w-[110%] max-w-[415px] rounded-full object-cover"
               src={nosAteliers1}
+              width={619}
+              height={719}
+              className="aspect-square h-auto w-[110%] max-w-[415px] rounded-full object-cover"
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-8 text-center lg:w-1/2">
@@ -31,11 +33,13 @@ export default function NosAteliersPage() {
             </p>
           </div>
         </div>
-        <div className="flex w-full max-w-[1200px] flex-col-reverse items-center px-4 lg:flex-row-reverse">
+        <div className="flex w-full max-w-[1100px] flex-col-reverse items-center px-4 lg:flex-row-reverse">
           <div className="flex w-2/3 justify-center pt-10 lg:w-1/2 lg:p-0">
             <img
-              className="aspect-square w-[110%] max-w-[415px] rounded-full object-cover"
               src={nosAteliers2}
+              width={620}
+              height={688}
+              className="aspect-square h-auto w-[110%] max-w-[415px] rounded-full object-cover"
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-8 text-center lg:w-1/2 lg:px-10">

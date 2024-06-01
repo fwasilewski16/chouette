@@ -44,7 +44,13 @@ function ListItemDesktop(props) {
       <div
         className={`flex h-full flex-col items-center justify-center gap-3 rounded-full border-2 border-gray-200 bg-white px-6 shadow-xl`}
       >
-        <img src={props.icon} loading="lazy" className="h-1/4" />
+        <img
+          src={props.icon}
+          loading="lazy"
+          className="h-1/4 w-auto object-cover"
+          width={512}
+          height={512}
+        />
         <p className="text-center text-[14px] font-medium tracking-wide antialiased xl:text-base">
           {props.children}
         </p>
@@ -57,7 +63,12 @@ function ListItemMobile(props) {
   return (
     <li className="flex w-full justify-center md:mb-8 md:w-1/2">
       <div className="flex w-[300px] flex-col items-center gap-2 rounded-3xl border border-gray-200 bg-white p-3 shadow-xl">
-        <img src={props.icon} className="w-16" />
+        <img
+          src={props.icon}
+          width={512}
+          height={512}
+          className="h-auto w-16"
+        />
         <p className="text-center text-[14px] font-medium tracking-wide">
           {props.children}
         </p>
