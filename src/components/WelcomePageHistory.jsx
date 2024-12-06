@@ -52,7 +52,7 @@ export default function WelcomePageHistory() {
       </div>
       <div className="flex max-w-[550px] justify-center lg:w-1/2">
         <div
-          className={`font-manrope delay-100 ${crewTextVisible ? "translate-x-0 opacity-100" : "lg:translate-x-16 lg:opacity-50"} flex flex-col gap-8 px-6 text-center tracking-wide tracking-wider text-black antialiased transition duration-[1200ms] ease-out lg:gap-12 lg:text-left`}
+          className={`font-manrope delay-100 ${crewTextVisible ? "translate-x-0 opacity-100" : "lg:translate-x-16 lg:opacity-50"} flex flex-col gap-8 px-6 text-center tracking-wider text-black antialiased transition duration-[1200ms] ease-out lg:gap-12 lg:text-left`}
         >
           <h2 className="text-4xl">Notre histoire</h2>
           <p className="text-[14px] lg:text-base">

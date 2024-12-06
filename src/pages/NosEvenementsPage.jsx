@@ -14,7 +14,7 @@ function Event(props) {
 }
 
 export default function NosEvenementsPage() {
-  const { loading, events, error } = useGetEvents();
+  // const { loading, events, error } = useGetEvents();
   console.log(events);
 
   return (
