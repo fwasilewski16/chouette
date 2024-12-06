@@ -15,7 +15,6 @@ function Event(props) {
 
 export default function NosEvenementsPage() {
   // const { loading, events, error } = useGetEvents();
-  console.log(events);
 
   return (
     <section className="font-montserrat min-h-[calc(100dvh-60px-40px)] xl:min-h-[calc(100dvh-69px-40px)]">
