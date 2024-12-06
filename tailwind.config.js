@@ -6,20 +6,14 @@ export default {
   ],
   theme: {
     extend: {
-      keyframes: {
-        zoom: {
-          "0%": { transform: "scale(1,1)" },
-          "100%": { transform: "scale(1.15,1.15)" },
-        },
-      },
-      animation: {
-        "zoomIn": "zoom 12s linear infinite",
-      },
       fontFamily: {
-        montserrat: "Montserrat",
+        manrope: "Manrope"
       }
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true
+  }
 }
 

@@ -8,74 +8,70 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function Navbar() {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [mobileMenuAnimation, setMobileMenuAnimation] = useState(false);
-  const [fullNavbarVisible, setFullNavbarVisible] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
   const { pathname } = useLocation();
 
   useEffect(() => {
-    function updateTop() {
-      window.scrollY >= 1
-        ? setFullNavbarVisible(true)
-        : setFullNavbarVisible(false);
-    }
-
-    window.addEventListener("scroll", updateTop);
-
     scrollTo(0, 0);
-
-    return () => window.removeEventListener("scroll", updateTop);
+    setTimeout(() => {
+      setNavbarVisible(true);
+    }, 300);
   }, [pathname]);
 
   return (
-    <header
-      className={`sticky left-0 right-0 top-0 z-50 flex h-[60px] justify-between pr-4 transition-all duration-500 ease-in-out xl:h-[80px] ${fullNavbarVisible || (mobileMenuVisible && mobileMenuAnimation) || pathname != "/" ? "bg-[#f9ab48] shadow-lg" : ""}`}
-    >
-      <NavLink
-        to="/"
-        onClick={() => {
-          setMobileMenuAnimation(false);
-          setTimeout(() => {
-            setMobileMenuVisible(false);
-          }, 500);
-        }}
+    <header className="sticky left-0 right-0 top-0 z-50 justify-between">
+      <div
+        className={`flex h-[55px] w-full items-center justify-between bg-[#f9ab48] transition-transform duration-[800ms] xl:h-[65px] ${!navbarVisible && pathname === "/" && "lg:translate-y-[-65px]"} ease-out`}
       >
-        <div
-          className={`flex h-full items-center transition duration-500 ease-in-out ${fullNavbarVisible || (mobileMenuVisible && mobileMenuAnimation) || pathname != "/" ? "opacity-100" : "opacity-0"}`}
+        <NavLink
+          to="/"
+          onClick={() => {
+            setMobileMenuAnimation(false);
+            setTimeout(() => {
+              setMobileMenuVisible(false);
+            }, 500);
+          }}
         >
-          <img
-            src={logo}
-            width={500}
-            height={367}
-            className="h-[50px] w-auto object-cover py-1 pl-3 xl:h-[70px]"
-          />
-          <div className="ml-1 mr-3 h-[40px] min-w-[2px] bg-white xl:h-[50px]" />
-          <div className="flex min-w-[148px] flex-col font-montserrat text-xl font-medium uppercase tracking-wide text-white antialiased">
-            <p>Chouette</p>
-            <p>On Apprend</p>
+          <div className="flex h-full items-center">
+            <img
+              src={logo}
+              width={500}
+              height={367}
+              className="h-[45px] w-auto object-cover py-1 pl-3 xl:h-[55px]"
+            />
+            <div className="ml-[2px] mr-[8px] h-[35px] min-w-[2px] rounded-lg bg-white xl:h-[45px]" />
+            <div className="flex min-w-[148px] flex-col font-manrope font-medium tracking-wider text-white antialiased xl:text-[16px]">
+              <p>Chouette</p>
+              <p>On Apprend</p>
+            </div>
           </div>
+        </NavLink>
+        <div className="hidden h-full justify-between gap-2 rounded-b-xl bg-[#f9ab48] px-4 xl:flex">
+          <NavbarButtonDesktop
+            to={"/qui-somme-nous"}
+            name={"Qui sommes-nous?"}
+          />
+          <NavbarButtonDesktop to={"/pedagogie"} name={"Notre pédagogie"} />
+          <NavbarButtonDesktop to={"/nos-ateliers"} name={"Nos ateliers"} />
+          <NavbarButtonDesktop to={"/nos-evenements"} name={"Nos évènements"} />
+          <NavbarButtonDesktop to={"/faire-un-don"} name={"Faire un don"} />
+          <NavbarButtonDesktop to={"/contact"} name={"Contact"} />
         </div>
-      </NavLink>
-      <div className="hidden h-full justify-between gap-2 rounded-b-xl bg-[#f9ab48] px-4 xl:flex">
-        <NavbarButtonDesktop to={"/nos-ateliers"} name={"Nos Ateliers"} />
-        <NavbarButtonDesktop to={"/nos-evenements"} name={"Nos évènements"} />
-        <NavbarButtonDesktop to={"/pedagogie"} name={"Pédagogie"} />
-        <NavbarButtonDesktop to={"/qui-somme-nous"} name={"Qui sommes-nous?"} />
-        <NavbarButtonDesktop to={"/faire-un-don"} name={"Faire un don"} />
-        <NavbarButtonDesktop to={"/contact"} name={"Contact"} />
-      </div>
-      <MobileMenuButton
-        mobileMenuVisible={mobileMenuVisible}
-        mobileMenuAnimation={mobileMenuAnimation}
-        setMobileMenuVisible={setMobileMenuVisible}
-        setMobileMenuAnimation={setMobileMenuAnimation}
-      />
-      {mobileMenuVisible && (
-        <MobileMenu
+        <MobileMenuButton
+          mobileMenuVisible={mobileMenuVisible}
           mobileMenuAnimation={mobileMenuAnimation}
           setMobileMenuVisible={setMobileMenuVisible}
           setMobileMenuAnimation={setMobileMenuAnimation}
         />
-      )}
+        {mobileMenuVisible && (
+          <MobileMenu
+            mobileMenuAnimation={mobileMenuAnimation}
+            setMobileMenuVisible={setMobileMenuVisible}
+            setMobileMenuAnimation={setMobileMenuAnimation}
+          />
+        )}
+      </div>
     </header>
   );
 }

@@ -43,7 +43,7 @@ export default function WelcomePageInstagram() {
         <ShapeSVG2 />
       </div>
       <div className="flex w-full max-w-[600px] justify-center px-2 lg:max-w-full">
-        <div className="my-10 max-w-[1200px]">
+        <div className="mb-16 max-w-[1200px]">
           <div className="mx-3 flex flex-col">
             <div className="flex flex-wrap">
               <InstagramPhoto />
@@ -53,7 +53,7 @@ export default function WelcomePageInstagram() {
               <InstagramPhoto />
               <InstagramPhoto />
             </div>
-            <div className="flex justify-center pt-10">
+            <div className="z-50 flex justify-center pt-16">
               <Button>Voir Plus</Button>
             </div>
           </div>

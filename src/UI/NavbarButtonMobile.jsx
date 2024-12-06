@@ -13,7 +13,7 @@ export default function NavbarButtonMobile(props) {
     >
       <NavLink
         to={props.to}
-        className="w-full font-montserrat text-lg font-medium tracking-wide text-white antialiased"
+        className="w-full font-manrope text-lg font-medium tracking-wider text-white antialiased"
       >
         {props.name}
       </NavLink>

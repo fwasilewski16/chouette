@@ -51,7 +51,7 @@ function ListItemDesktop(props) {
           width={512}
           height={512}
         />
-        <p className="text-center text-[14px] font-medium tracking-wide antialiased xl:text-base">
+        <p className="text-center text-[14px] tracking-wide antialiased xl:text-sm">
           {props.children}
         </p>
       </div>
@@ -62,14 +62,14 @@ function ListItemDesktop(props) {
 function ListItemMobile(props) {
   return (
     <li className="flex w-full justify-center md:mb-8 md:w-1/2">
-      <div className="flex w-[300px] flex-col items-center gap-2 rounded-3xl border border-gray-200 bg-white p-3 shadow-xl">
+      <div className="flex w-[300px] flex-col items-center gap-2 rounded-3xl border border-gray-300 bg-white p-4">
         <img
           src={props.icon}
           width={512}
           height={512}
           className="h-auto w-16"
         />
-        <p className="text-center text-[14px] font-medium tracking-wide">
+        <p className="text-center text-[14px] font-medium tracking-wider">
           {props.children}
         </p>
       </div>
@@ -84,7 +84,7 @@ export default function WelcomePageVideo() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0].isIntersecting;
-      entry ? setCrewTextVisible(true) : setCrewTextVisible(false);
+      entry && setCrewTextVisible(true);
     });
 
     observer.observe(divRef.current);
@@ -93,15 +93,18 @@ export default function WelcomePageVideo() {
   return (
     <section
       ref={divRef}
-      className="relative flex flex-col items-center justify-center bg-[#fffcf9] px-4 font-montserrat"
+      className="relative flex justify-center bg-[#fffcf9] px-4 font-manrope"
     >
       <div
-        className={`${crewTextVisible ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"} hidden w-full max-w-[1200px] flex-col items-center justify-center transition delay-100 duration-[1200ms] ease-in-out lg:flex`}
+        className={`${crewTextVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-50"} hidden w-full max-w-[1200px] flex-col items-center justify-center transition delay-100 duration-[1200ms] ease-out lg:flex`}
       >
         <ShapeSVG1 />
-        <p className="absolute left-1/2 top-1/2 w-[400px] -translate-x-1/2 -translate-y-1/2 text-center font-montserrat text-5xl tracking-wider antialiased">
-          Notre équipe vous propose
-        </p>
+        <div className="absolute left-1/2 top-1/2 flex w-[400px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-12">
+          <p className="text-center font-manrope text-4xl tracking-wider antialiased">
+            Notre équipe vous propose
+          </p>
+          <Button to={"/pedagogie"}>Pédagogie</Button>
+        </div>
         <ul className="mb-16">
           <ListItemDesktop icon={icon1} rotate={180}>
             Des séances individuelles de médiation cognitive (méthode
@@ -111,7 +114,7 @@ export default function WelcomePageVideo() {
             Des séances de travail par le biais de l'expression artistique
             (musique, sculpture, peinture, dessin)
           </ListItemDesktop>
-          <ListItemDesktop icon={icon3} rotate={60} bg={"#0000FF"}>
+          <ListItemDesktop icon={icon3} rotate={60}>
             Des séances qui incluent des temps de relaxation, de respiration et
             de yoga
           </ListItemDesktop>
@@ -128,13 +131,11 @@ export default function WelcomePageVideo() {
           </ListItemDesktop>
         </ul>
       </div>
-      <div
-        className={`${crewTextVisible ? "translate-x-0 opacity-100" : "-translate-x-6 opacity-0"} flex w-full flex-col items-center justify-center gap-10 antialiased transition delay-100 duration-[1200ms] ease-in-out lg:hidden`}
-      >
-        <p className="text-center text-4xl tracking-wide">
+      <div className="flex w-full flex-col items-center justify-center pt-16 antialiased lg:hidden">
+        <p className="mb-16 text-center text-4xl tracking-wide">
           Notre équipe vous propose
         </p>
-        <ul className="mb-10 flex max-w-[650px] flex-wrap gap-10 md:mb-0 md:gap-0">
+        <ul className="mb-16 flex max-w-[650px] flex-wrap gap-8 md:mb-8 md:gap-0">
           <ListItemMobile icon={icon1} rotate={0}>
             Des séances individuelles de médiation cognitive (méthode
             Feuerstein, Raviv, Montessori)
@@ -159,8 +160,8 @@ export default function WelcomePageVideo() {
             Des échanges réguliers avec les autres thérapeutes
           </ListItemMobile>
         </ul>
+        <Button to={"/pedagogie"}>Pédagogie</Button>
       </div>
-      <Button to={"/pedagogie"}>Pédagogie</Button>
     </section>
   );
 }
