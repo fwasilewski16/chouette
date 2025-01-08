@@ -6,27 +6,32 @@ export default function useGetEvents() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // async function fetchEvents() {
-    //   const response = await fetch(
-    //     "https://api.airtable.com/v0/appLZOcNhR4ySeuiC/tbl3u4UrmwM5CMFpW",
-    //     {
-    //       headers: {
-    //         Authorization:
-    //       },
-    //     },
-    //   );
-    //   const data = await response.json();
-    //   const eventsFinal = data.records.map((event) => {
-    //     return {
-    //       title: event.fields.title,
-    //       date: event.fields.date,
-    //       img: event.fields.attachments[0].url,
-    //       active: event.fields.active ? true : false,
-    //     };
-    //   });
-    //   setEvents(eventsFinal.reverse());
-    // }
-    // fetchEvents();
+    async function fetchEvents() {
+      setLoading(true); // Start loading
+      setError(false); // Reset any previous errors
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/chouette/events`,
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch events");
+        }
+
+        const data = await response.json();
+
+        setEvents(data); // Set the events state with the fetched data
+      } catch (err) {
+        setError(true); // Set error state to true if there's an issue
+        console.error("Error fetching events: ", err);
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000); // End loading state regardless of success or failure
+      }
+    }
+
+    fetchEvents();
   }, []);
 
   return { loading, events, error };

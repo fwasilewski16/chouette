@@ -51,7 +51,7 @@ export function PurpleBanner() {
         setPathnameState("Notre pédagogie");
         break;
       case "/qui-somme-nous":
-        setPathnameState("Qui sommes nous ?");
+        setPathnameState("Qui sommes-nous ?");
         break;
       case "/faire-un-don":
         setPathnameState("Pourquoi nous aider ?");
@@ -84,7 +84,7 @@ export function PurpleBanner() {
       <Title
         pathname={pathname}
         display={pathname === "/qui-somme-nous"}
-        header={"Qui sommes nous ?"}
+        header={"Qui sommes-nous ?"}
       />
       <Title
         pathname={pathname}
