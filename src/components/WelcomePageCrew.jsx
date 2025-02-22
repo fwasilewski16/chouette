@@ -43,7 +43,7 @@ export default function WelcomePageCrew() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center overflow-hidden bg-[#fffcf9] px-4 pb-16 lg:pb-52 lg:pt-28">
+    <div className="relative flex flex-col items-center justify-center overflow-hidden bg-[#fffcf9] px-4 pb-16 lg:pb-36 lg:pt-36">
       <div
         ref={divRef}
         className="flex flex-col-reverse items-center justify-between lg:max-w-[1200px] lg:flex-row"

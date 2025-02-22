@@ -11,7 +11,7 @@ function Event({
   time,
   description,
 }) {
-  const [imageVisible, setImageVisible] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   return (
     <div className="flex h-fit w-full flex-col p-6 md:w-1/2">
       <img
@@ -19,7 +19,8 @@ function Event({
         width={imageWidth}
         height={imageHeight}
         alt={title}
-        className="mb-4 w-full rounded-xl"
+        className={`${imageLoaded ? "opacity-100" : "opacity-0"} mb-4 w-full rounded-xl transition duration-1000`}
+        onLoad={() => setImageLoaded(true)}
       />
 
       <h2 className="mb-2 text-2xl font-semibold text-gray-800">{title}</h2>

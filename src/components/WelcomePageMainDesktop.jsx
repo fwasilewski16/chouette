@@ -109,12 +109,26 @@ export default function WelcomePageMainDesktop() {
               height={512}
             />
             <p className="text-xs font-medium lg:text-sm">
-              contact@chouetteonapprend.org
+              <a href="mailto:contact@chouetteonapprend.org">
+                contact@chouetteonapprend.org
+              </a>
             </p>
           </div>
           <div className="relative flex w-full justify-start gap-10">
-            <img src={facebookIcon} className="h-4 lg:h-5" />
-            <img src={InstagramIcon} className="h-4 lg:h-5" />
+            <a
+              href="https://www.facebook.com/profile.php?id=100052757875010#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={facebookIcon} className="h-4 lg:h-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/chouette_on_apprend/?igshid=YmMyMTA2M2Y%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={InstagramIcon} className="h-4 lg:h-5" />
+            </a>
             <img
               src={logo}
               width={500}

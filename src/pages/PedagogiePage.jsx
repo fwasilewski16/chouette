@@ -8,9 +8,17 @@ import bienÊtre from "../assets/pedagogie/bienÊtre.webp";
 import { useEffect, useState } from "react";
 
 function PedagogieSingle(props) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div className="mx-auto mt-10 flex flex-col gap-3 px-6 sm:w-1/2 lg:w-1/3">
-      <img src={props.img} className="rounded-2xl object-cover" />
+      <img
+        src={props.img}
+        width={352}
+        height={352}
+        className={`${imageLoaded ? "opacity-100" : "opacity-0"} rounded-2xl object-cover transition duration-1000`}
+        onLoad={() => setImageLoaded(true)}
+      />
       <h4 className="text-lg font-medium">{props.title}</h4>
       {props.text.map((text, index) => (
         <p key={index} className="text-justify text-sm">

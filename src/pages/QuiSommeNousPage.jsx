@@ -7,6 +7,8 @@ import riva from "../assets/quiSommesNous/riva.webp";
 import { useEffect, useState } from "react";
 
 function QuiSommeNousSingle(props) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div className="flex w-4/5 flex-col gap-4 sm:mb-8 sm:w-1/2 sm:px-4 md:px-8 lg:w-1/3">
       <div className="relative">
@@ -14,7 +16,8 @@ function QuiSommeNousSingle(props) {
           src={props.img}
           width={600}
           height={800}
-          className="mx-auto rounded-2xl object-cover"
+          className={`${imageLoaded ? "opacity-100" : "opacity-0"} mx-auto rounded-2xl object-cover transition duration-1000`}
+          onLoad={() => setImageLoaded(true)}
         />
       </div>
       <h4 className="w-fit rounded-lg bg-[#F9AB48] px-2 text-2xl font-medium text-white">
@@ -41,9 +44,11 @@ export default function QuiSommeNousPage() {
   const [divVisible, setDivVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setDivVisible(true);
     }, 100);
+
+    return () => clearTimeout(timer); // Cleanup to prevent issues
   }, []);
 
   return (

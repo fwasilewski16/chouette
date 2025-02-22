@@ -4,6 +4,8 @@ import nosAteliers4 from "../assets/nosateliers/nosAteliers4.webp";
 
 export default function NosAteliersPage() {
   const [divVisible, setDivVisible] = useState(false);
+  const [image1Loaded, setImage1Loaded] = useState(false);
+  const [image2Loaded, setImage2Loaded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +24,8 @@ export default function NosAteliersPage() {
               src={nosAteliers1}
               width={619}
               height={619}
-              className="mx-auto w-full max-w-[380px] rounded-full object-cover lg:w-2/3"
+              className={`${image1Loaded ? "opacity-100" : "opacity-0"} mx-auto w-full max-w-[380px] rounded-full object-cover transition duration-1000 lg:w-2/3`}
+              onLoad={() => setImage1Loaded(true)}
             />
           </div>
           <div className="flex max-w-[500px] flex-col gap-8 lg:w-1/2 lg:max-w-none">
@@ -45,7 +48,8 @@ export default function NosAteliersPage() {
               src={nosAteliers4}
               width={619}
               height={619}
-              className="mx-auto w-full max-w-[380px] object-cover lg:w-2/3"
+              className={`${image1Loaded ? "opacity-100" : "opacity-0"} mx-auto w-full max-w-[380px] object-cover transition duration-1000 lg:w-2/3`}
+              onLoad={() => setImage2Loaded(true)}
             />
           </div>
           <div className="flex max-w-[500px] flex-col gap-8 lg:w-1/2 lg:max-w-none">
