@@ -16,8 +16,9 @@ function QuiSommeNousSingle(props) {
           src={props.img}
           width={600}
           height={800}
-          className={`${imageLoaded ? "opacity-100" : "opacity-0"} mx-auto rounded-2xl object-cover transition duration-1000`}
+          className={`${imageLoaded ? "opacity-100" : "opacity-0"} mx-auto rounded-2xl object-cover transition duration-500`}
           onLoad={() => setImageLoaded(true)}
+          alt={props.title}
         />
       </div>
       <h4 className="w-fit rounded-lg bg-[#F9AB48] px-2 text-2xl font-medium text-white">
@@ -48,7 +49,7 @@ export default function QuiSommeNousPage() {
       setDivVisible(true);
     }, 100);
 
-    return () => clearTimeout(timer); // Cleanup to prevent issues
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -68,7 +69,7 @@ export default function QuiSommeNousPage() {
             </p>
           </div>
         </div>
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center sm:flex-row sm:flex-wrap sm:items-start">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center pb-16 sm:flex-row sm:flex-wrap sm:items-start sm:pb-0">
           <QuiSommeNousSingle
             img={farah}
             title={"Farah"}

@@ -16,8 +16,9 @@ function PedagogieSingle(props) {
         src={props.img}
         width={352}
         height={352}
-        className={`${imageLoaded ? "opacity-100" : "opacity-0"} rounded-2xl object-cover transition duration-1000`}
+        className={`${imageLoaded ? "opacity-100" : "opacity-0"} mx-auto rounded-2xl object-cover transition duration-500`}
         onLoad={() => setImageLoaded(true)}
+        alt={props.title}
       />
       <h4 className="text-lg font-medium">{props.title}</h4>
       {props.text.map((text, index) => (

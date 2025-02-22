@@ -14,8 +14,8 @@ export default function WelcomePage() {
       <WelcomePageList />
       <WelcomePageCrew />
       <WelcomePageInstagram />
-      <div className="w-full bg-[#fffcf9] pb-4 pt-16">
-        <p className="mx-auto max-w-[800px] text-center font-manrope text-sm tracking-wider antialiased">
+      <div className="w-full bg-[#fffcf9] pb-4">
+        <p className="mx-auto max-w-[800px] px-2 text-center font-manrope text-sm tracking-wider antialiased">
           Toute l'équipe de Chouette On Apprend remercie infiniment Filip
           Wasilewski, développeur web, qui a créé bénévolement notre beau site
           internet.

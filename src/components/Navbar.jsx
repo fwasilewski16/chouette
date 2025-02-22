@@ -39,6 +39,7 @@ export default function Navbar() {
               width={500}
               height={367}
               className="h-[45px] w-auto object-cover py-1 pl-3 xl:h-[55px]"
+              alt="Chouette On Apprend logo"
             />
             <div className="ml-[2px] mr-[8px] h-[35px] min-w-[2px] rounded-lg bg-white xl:h-[45px]" />
             <div className="flex min-w-[148px] flex-col font-manrope font-medium tracking-wider text-white antialiased xl:text-[16px]">

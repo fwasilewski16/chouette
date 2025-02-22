@@ -16,7 +16,7 @@ export default function NosAteliersPage() {
   return (
     <section className="bg-[#fffcf9] pt-[55px] xl:pt-[65px]">
       <div
-        className={`flex flex-col ${divVisible ? "" : "translate-y-2 opacity-0"} items-center font-manrope antialiased transition duration-1000`}
+        className={`flex flex-col ${divVisible ? "" : "translate-y-2 opacity-0"} items-center font-manrope antialiased transition duration-500`}
       >
         <div className="flex w-full max-w-[1100px] flex-col-reverse items-center px-4 pt-6 lg:flex-row lg:py-12">
           <div className="w-[80%] pt-10 lg:w-1/2 lg:p-0">
@@ -24,7 +24,7 @@ export default function NosAteliersPage() {
               src={nosAteliers1}
               width={619}
               height={619}
-              className={`${image1Loaded ? "opacity-100" : "opacity-0"} mx-auto w-full max-w-[380px] rounded-full object-cover transition duration-1000 lg:w-2/3`}
+              className={`${image1Loaded ? "opacity-100" : "opacity-0"} mx-auto w-full max-w-[380px] rounded-full object-cover transition duration-500 lg:w-2/3`}
               onLoad={() => setImage1Loaded(true)}
             />
           </div>

@@ -19,7 +19,7 @@ function Event({
         width={imageWidth}
         height={imageHeight}
         alt={title}
-        className={`${imageLoaded ? "opacity-100" : "opacity-0"} mb-4 w-full rounded-xl transition duration-1000`}
+        className={`${imageLoaded ? "opacity-100" : "opacity-0"} mb-4 w-full rounded-xl transition duration-500`}
         onLoad={() => setImageLoaded(true)}
       />
 

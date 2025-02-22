@@ -15,6 +15,8 @@ import main4 from "../assets/carousel/main4.jpg";
 import main5 from "../assets/carousel/main5.jpg";
 
 export default function WelcomePageMainMobile() {
+  const images = [main1, main2, main3, main4, main5];
+
   return (
     <div className="sm:hidden">
       <div className="sticky top-0 -z-50">
@@ -29,21 +31,17 @@ export default function WelcomePageMainMobile() {
           }}
           allowTouchMove={false}
         >
-          <SwiperSlide>
-            <img src={main1} height={1613} width={2560} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={main2} height={1613} width={2560} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={main3} height={1613} width={2560} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={main4} height={1613} width={2560} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={main5} height={1613} width={2560} />
-          </SwiperSlide>
+          {images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                height={1613}
+                width={2560}
+                alt={`Slide ${index + 1}`}
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       <div className="flex w-full flex-col gap-4 bg-[#f9ab48] p-5 font-manrope font-medium tracking-wider text-white">
@@ -61,34 +59,52 @@ export default function WelcomePageMainMobile() {
         <div className="flex items-center justify-center gap-2">
           <img
             src={locationIcon}
-            width={512}
-            height={512}
+            width={16}
+            height={16}
             className="h-4 w-auto invert"
+            alt="Location icon"
           />
           <p className="text-sm">Paris</p>
         </div>
         <div className="flex items-center justify-center gap-2">
           <img
             src={emailIcon}
-            width={512}
-            height={512}
+            width={16}
+            height={16}
             className="h-4 w-auto invert"
+            alt="Email icon"
           />
           <p className="text-sm">contact@chouetteonapprend.org</p>
         </div>
         <div className="relative flex w-full justify-center gap-6 pt-2">
-          <img
-            width={512}
-            height={512}
-            src={facebookIcon}
-            className="h-5 w-auto invert md:h-6"
-          />
-          <img
-            width={512}
-            height={512}
-            src={InstagramIcon}
-            className="h-5 w-auto invert md:h-6"
-          />
+          <a
+            href="https://www.facebook.com/profile.php?id=100052757875010#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <img
+              width={20}
+              height={20}
+              src={facebookIcon}
+              className="h-5 w-auto invert md:h-6"
+              alt="Facebook logo"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/chouette_on_apprend/?igshid=YmMyMTA2M2Y%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img
+              width={20}
+              height={20}
+              src={InstagramIcon}
+              className="h-5 w-auto invert md:h-6"
+              alt="Instagram logo"
+            />
+          </a>
         </div>
       </div>
     </div>

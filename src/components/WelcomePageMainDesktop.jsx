@@ -20,8 +20,11 @@ export default function WelcomePageMainDesktop() {
   const [textVisible, setTextVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setTextVisible(true), 400);
+    const timeout = setTimeout(() => setTextVisible(true), 400);
+    return () => clearTimeout(timeout);
   }, []);
+
+  const images = [main1, main2, main3, main4, main5];
 
   return (
     <section className="relative hidden overflow-hidden sm:inline">
@@ -37,46 +40,18 @@ export default function WelcomePageMainDesktop() {
           }}
           allowTouchMove={false}
         >
-          <SwiperSlide>
-            <img
-              src={main1}
-              height={1613}
-              width={2560}
-              className="max-h-full"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={main2}
-              height={1613}
-              width={2560}
-              className="max-h-full"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={main3}
-              height={1613}
-              width={2560}
-              className="max-h-full"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={main4}
-              height={1613}
-              width={2560}
-              className="max-h-full"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={main5}
-              height={1613}
-              width={2560}
-              className="max-h-full"
-            />
-          </SwiperSlide>
+          {images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                height={1613}
+                width={2560}
+                className="max-h-full object-cover"
+                alt={`Slide ${index + 1}`}
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       <div className="absolute bottom-0 left-3 right-1/2 flex items-end justify-end overflow-hidden">
@@ -96,8 +71,9 @@ export default function WelcomePageMainDesktop() {
             <img
               src={locationIcon}
               className="size-[12px] lg:size-[14px]"
-              width={512}
-              height={512}
+              width={14}
+              height={14}
+              alt="Location icon"
             />
             <p className="text-xs font-medium lg:text-sm">Paris</p>
           </div>
@@ -105,8 +81,9 @@ export default function WelcomePageMainDesktop() {
             <img
               src={emailIcon}
               className="size-[12px] lg:size-[14px]"
-              width={512}
-              height={512}
+              width={14}
+              height={14}
+              alt="Email icon"
             />
             <p className="text-xs font-medium lg:text-sm">
               <a href="mailto:contact@chouetteonapprend.org">
@@ -119,21 +96,32 @@ export default function WelcomePageMainDesktop() {
               href="https://www.facebook.com/profile.php?id=100052757875010#"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
-              <img src={facebookIcon} className="h-4 lg:h-5" />
+              <img
+                src={facebookIcon}
+                className="h-4 lg:h-5"
+                alt="Facebook logo"
+              />
             </a>
             <a
               href="https://www.instagram.com/chouette_on_apprend/?igshid=YmMyMTA2M2Y%3D"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
-              <img src={InstagramIcon} className="h-4 lg:h-5" />
+              <img
+                src={InstagramIcon}
+                className="h-4 lg:h-5"
+                alt="Instagram logo"
+              />
             </a>
             <img
               src={logo}
               width={500}
               height={367}
               className="absolute bottom-0 right-0 hidden h-16 w-auto -scale-x-100 lg:block"
+              alt="Chouette On Apprend logo"
             />
           </div>
         </div>
