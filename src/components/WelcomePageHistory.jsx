@@ -55,24 +55,40 @@ export default function WelcomePageHistory() {
           className={`font-manrope delay-100 ${crewTextVisible ? "translate-x-0 opacity-100" : "lg:translate-x-16 lg:opacity-50"} flex flex-col gap-8 px-6 text-center tracking-wider text-black antialiased transition duration-[1200ms] ease-out lg:gap-12 lg:text-left`}
         >
           <h2 className="text-4xl">Notre histoire</h2>
-          <p className="text-[14px] lg:text-base">
-            Ce projet est né de belles rencontres et de la découverte de
-            l'isolement dans lequel se trouvent les personnes en difficultés
-            d'apprentissage et leurs familles. Nous avons voulu proposer une
-            alternative optimiste aux prises en charge existantes, fondée sur la
-            conviction que les situations d'échec dans les apprentissages ne
-            sont pas une fatalité : avec une approche adaptée et beaucoup de
-            travail, le changement est possible!
+          <p className="text-[14px] lg:text-sm">
+            L’histoire de Chouette on Apprend est née de la rencontre d’une
+            volonté - développer un projet de solidarité sociale en France,
+            terre d’accueil d’une partie de notre famille - et d’une histoire
+            personnelle : celle de cette inoubliable maman rencontrée au jardin
+            d’enfants où allaient mes enfants, qui vivait le handicap au
+            quotidien. Elle se heurtait chaque jour à cette question : quelles
+            solutions éducatives en France pour mon enfant en situation de
+            handicap
           </p>
-          <p className="text-[14px] lg:text-base">
-            Chouette On Apprend est une Association française, soumise aux
-            dispositions de la loi de 1901, qui propose un projet éducatif aux
-            enfants, aux adolescents et aux jeunes adultes rencontrant des
-            difficultés d'apprentissage ou ayant besoin d'un soutien
-            méthodologique. L'association est financée exclusivement à ce jour
-            par la Fondation Juniclair, véhicule philanthropique du groupe
-            Batipart.
+          <p className="text-[14px] lg:text-sm">
+            Nous avons donc conçu cette structure associative pour mettre en
+            place des projets pédagogiques sur mesure pour les enfants, les
+            adolescents et les jeunes adultes en difficulté d’apprentissage,
+            fondés sur différentes méthodes qui ont toutes en commun la
+            conviction qu’il faut identifier les potentiels d’apprentissage pour
+            les aider à émerger, les développer… et que personne ne peut prédire
+            la limite des possibilités d’un être humain. Les années ont passé,
+            les enfants ont grandi et nous avec eux, grâce à eux aussi.
           </p>
+          <div className="text-sm">
+            <p className="font-semibold">
+              Claire, Présidente de l'association{" "}
+            </p>
+            <p className="hover:underline">
+              <a
+                href="https://www.juniclair.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.juniclair.org
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </section>

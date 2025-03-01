@@ -21,7 +21,6 @@ export default function WelcomePageInstagram() {
             src="https://snapwidget.com/embed/1088781"
             className="snapwidget-widget"
             allowtransparency="true"
-            loading="lazy"
             style={{
               border: "none",
               overflow: "hidden",

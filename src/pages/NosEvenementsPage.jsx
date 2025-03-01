@@ -13,7 +13,7 @@ function Event({
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   return (
-    <div className="flex h-fit w-full flex-col p-6 md:w-1/2">
+    <div className="flex h-fit w-full flex-col p-3 md:w-1/2">
       <img
         src={image}
         width={imageWidth}
@@ -66,25 +66,33 @@ export default function NosEvenementsPage() {
             className={`flex flex-col justify-center md:flex-row md:flex-wrap  ${revealEvents ? "h-fit translate-y-0 opacity-100" : "h-0 translate-y-2 opacity-0"} transition-all duration-700`}
           >
             {!loading &&
-              events.length > 0 &&
-              events.map((event, index) => {
-                if (event.fields.active) {
-                  return (
-                    <Event
-                      key={index}
-                      title={event.fields.title}
-                      date={event.fields.date}
-                      time={event.fields.time}
-                      image={event.fields.image[0].url}
-                      imageWidth={event.fields.image[0].width}
-                      imageHeight={event.fields.image[0].height}
-                      description={event.fields.description}
-                    />
-                  );
-                } else {
-                  return;
-                }
-              })}
+              (Array.isArray(events) && events.length > 0 ? (
+                events.some((event) => event.fields?.active) ? (
+                  events.map(
+                    (event, index) =>
+                      event.fields?.active && (
+                        <Event
+                          key={index}
+                          title={event.fields.title}
+                          date={event.fields.date}
+                          time={event.fields.time}
+                          image={event.fields.image?.[0]?.url}
+                          imageWidth={event.fields.image?.[0]?.width}
+                          imageHeight={event.fields.image?.[0]?.height}
+                          description={event.fields.description}
+                        />
+                      ),
+                  )
+                ) : (
+                  <p className="text-center">
+                    Restez connectés pour suivre nos prochains événements!
+                  </p>
+                )
+              ) : (
+                <p className="text-center">
+                  Restez connectés pour suivre nos prochains événements!
+                </p>
+              ))}
           </div>
         </div>
       </div>

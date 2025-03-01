@@ -97,7 +97,7 @@ export default function PedagogiePage() {
               title={"Atelier Conte"}
               text={[
                 "Depuis septembre 2023, Ben a rejoint l’association afin d’y animer des ateliers conte, ouverts aux apprenants qui le souhaitent.",
-                "Ces ateliers ont pour but la lecture d’histoires adaptées au degré de compréhension des enfants et des adolescents. Ils sont généralement suivis de courts échanges et de jeux de rôle pour stimuler la créativité et l’imagination de chacun, tout en favorisant les échanges !",
+                "Ces ateliers ont pour but la lecture d’histoires adaptées au degré de compréhension des enfants et des adolescents. Ils sont généralement suivis de courts échanges et de jeux de rôle pour stimuler la créativité et l’imagination de chacun, tout en favorisant les échanges!",
               ]}
             />
             <PedagogieSingle
