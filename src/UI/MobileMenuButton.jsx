@@ -1,7 +1,15 @@
 export default function MobileMenuButton(props) {
   return (
-    <div
+    <button
+      type="button"
       className="flex justify-end rounded-b-xl bg-[#f9ab48] px-3 xl:hidden"
+      aria-label={
+        props.mobileMenuVisible
+          ? "Fermer le menu de navigation"
+          : "Ouvrir le menu de navigation"
+      }
+      aria-controls="mobile-navigation"
+      aria-expanded={props.mobileMenuVisible}
       onClick={() => {
         if (!props.mobileMenuVisible) {
           props.setMobileMenuVisible(true);
@@ -28,6 +36,6 @@ export default function MobileMenuButton(props) {
           className={`${props.mobileMenuAnimation && "-translate-y-[2px] -rotate-45"} h-[2px] w-9 rounded-lg bg-white transition-all duration-500`}
         />
       </div>
-    </div>
+    </button>
   );
 }

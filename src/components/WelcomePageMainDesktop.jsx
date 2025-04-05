@@ -28,6 +28,7 @@ export default function WelcomePageMainDesktop() {
 
   return (
     <section className="relative hidden overflow-hidden sm:inline">
+      <h1 className="sr-only">Bienvenue sur Chouette On Apprend</h1>{" "}
       <div className="sticky top-0 -z-50 max-h-[calc(100dvh-65px)] overflow-hidden lg:mt-[-55px] lg:max-h-[100dvh] xl:mt-[-65px]">
         <Swiper
           slidesPerView={1}

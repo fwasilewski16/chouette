@@ -45,6 +45,7 @@ export default function WelcomePageHistory() {
           height={882}
           width={600}
           className="z-50 w-3/5 rounded-xl object-cover brightness-[1.6]"
+          alt="Une petite fille travaillant avec un enseignant dans un environnement éducatif"
         />
         <div className="absolute bottom-0 left-0 right-0 top-0">
           <ShapeSVG />
@@ -84,6 +85,7 @@ export default function WelcomePageHistory() {
                 href="https://www.juniclair.org"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Site officiel de Claire, Présidente de l'association Chouette On Apprend"
               >
                 www.juniclair.org
               </a>

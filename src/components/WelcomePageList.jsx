@@ -50,6 +50,7 @@ function ListItemDesktop(props) {
           className="h-1/4 w-auto object-cover"
           width={512}
           height={512}
+          alt={props.alt}
         />
         <p className="text-center text-[14px] tracking-wide antialiased xl:text-sm">
           {props.children}
@@ -67,6 +68,7 @@ function ListItemMobile(props) {
           src={props.icon}
           width={512}
           height={512}
+          alt={props.alt}
           className="h-auto w-16"
         />
         <p className="text-center text-[14px] font-medium tracking-wider">
@@ -100,67 +102,140 @@ export default function WelcomePageVideo() {
       >
         <ShapeSVG1 />
         <div className="absolute left-1/2 top-1/2 flex w-[400px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-12">
-          <p className="text-center font-manrope text-4xl tracking-wider antialiased">
+          <h2 className="text-center font-manrope text-4xl tracking-wider antialiased">
             Notre équipe vous propose
-          </p>
+          </h2>
           <Button to={"/pedagogie"}>Pédagogie</Button>
         </div>
         <ul className="mb-16">
-          <ListItemDesktop icon={icon1} rotate={180}>
+          <ListItemDesktop
+            icon={icon1}
+            alt={
+              "Icône représentant la médiation cognitive, avec un cerveau en réflexion"
+            }
+            rotate={180}
+          >
             Des séances individuelles de médiation cognitive (méthode
             Feuerstein, Raviv, Montessori)
           </ListItemDesktop>
-          <ListItemDesktop icon={icon2} rotate={120}>
+          <ListItemDesktop
+            icon={icon2}
+            alt={
+              "Icône représentant une palette de peinture en bois avec des couleurs variées et un pinceau"
+            }
+            rotate={120}
+          >
             Des séances de travail par le biais de l'expression artistique
             (musique, sculpture, peinture, dessin)
           </ListItemDesktop>
-          <ListItemDesktop icon={icon3} rotate={60}>
+          <ListItemDesktop
+            icon={icon3}
+            alt={
+              "Icône représentant un visage souriant avec les yeux fermés, symbolisant la relaxation et le bien-être"
+            }
+            rotate={60}
+          >
             Des séances qui incluent des temps de relaxation, de respiration et
             de yoga
           </ListItemDesktop>
-          <ListItemDesktop icon={icon4} rotate={0}>
+          <ListItemDesktop
+            icon={icon4}
+            alt={
+              "Icône représentant une famille avec deux adultes et un enfant"
+            }
+            rotate={0}
+          >
             Des ateliers centrés sur la dynamique familiale (ateliers ados,
             frères et soeurs et parents)
           </ListItemDesktop>
-          <ListItemDesktop icon={icon5} rotate={240}>
+          <ListItemDesktop
+            icon={icon5}
+            alt={"Icône représentant un chapeau de diplômé"}
+            rotate={240}
+          >
             Des interventions dans les écoles (suivi pédagogique,
             sensibilisation)
           </ListItemDesktop>
-          <ListItemDesktop icon={icon6} rotate={300}>
+          <ListItemDesktop
+            icon={icon6}
+            alt={
+              "Icône représentant deux nuages de dialogue, symbolisant une conversation"
+            }
+            rotate={300}
+          >
             Des échanges réguliers avec les autres thérapeutes
           </ListItemDesktop>
         </ul>
       </div>
       <div className="flex w-full flex-col items-center justify-center pt-16 antialiased lg:hidden">
-        <p className="mb-16 text-center text-4xl tracking-wide">
+        <h2 className="mb-16 text-center text-4xl tracking-wide">
           Notre équipe vous propose
-        </p>
+        </h2>
         <ul className="mb-16 flex max-w-[650px] flex-wrap gap-8 md:mb-8 md:gap-0">
-          <ListItemMobile icon={icon1} rotate={0}>
+          <ListItemMobile
+            icon={icon1}
+            alt={
+              "Icône représentant la médiation cognitive, avec un cerveau en réflexion"
+            }
+            rotate={0}
+          >
             Des séances individuelles de médiation cognitive (méthode
             Feuerstein, Raviv, Montessori)
           </ListItemMobile>
-          <ListItemMobile icon={icon2} rotate={60}>
+          <ListItemMobile
+            icon={icon2}
+            alt={
+              "Icône représentant une palette de peinture en bois avec des couleurs variées et un pinceau"
+            }
+            rotate={60}
+          >
             Des séances de travail par le biais de l'expression artistique
             (musique, sculpture, peinture, dessin)
           </ListItemMobile>
-          <ListItemMobile icon={icon3} rotate={120}>
+          <ListItemMobile
+            icon={icon3}
+            alt={
+              "Icône représentant un visage souriant avec les yeux fermés, symbolisant la relaxation et le bien-être"
+            }
+            rotate={120}
+          >
             Des séances qui incluent des temps de relaxation, de respiration et
             de yoga
           </ListItemMobile>
-          <ListItemMobile icon={icon4} rotate={180}>
+          <ListItemMobile
+            icon={icon4}
+            alt={
+              "Icône représentant une famille avec deux adultes et un enfant"
+            }
+            rotate={180}
+          >
             Des ateliers centrés sur la dynamique familiale (ateliers ados,
             frères et soeurs et parents)
           </ListItemMobile>
-          <ListItemMobile icon={icon5} rotate={240}>
+          <ListItemMobile
+            icon={icon5}
+            alt={"Icône représentant un chapeau de diplômé"}
+            rotate={240}
+          >
             Des interventions dans les écoles (suivi pédagogique,
             sensibilisation)
           </ListItemMobile>
-          <ListItemMobile icon={icon6} rotate={300}>
+          <ListItemMobile
+            icon={icon6}
+            alt={
+              "Icône représentant deux nuages de dialogue, symbolisant une conversation"
+            }
+            rotate={300}
+          >
             Des échanges réguliers avec les autres thérapeutes
           </ListItemMobile>
         </ul>
-        <Button to={"/pedagogie"}>Pédagogie</Button>
+        <Button
+          to={"/pedagogie"}
+          ariaLabel="En savoir plus sur notre pédagogie"
+        >
+          Pédagogie
+        </Button>
       </div>
     </section>
   );

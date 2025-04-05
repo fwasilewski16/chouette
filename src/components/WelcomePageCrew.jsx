@@ -74,7 +74,12 @@ export default function WelcomePageCrew() {
             <div className="my-3 h-[1px] w-3/5 bg-black" />
             <CrewMemberComponent name={"Ben"} role={"Comédien et conteur"} />
             <div className="mt-10">
-              <Button to={"/qui-somme-nous"}>Qui sommes-nous?</Button>
+              <Button
+                to={"/qui-somme-nous"}
+                ariaLabel="En savoir plus sur notre équipe"
+              >
+                Qui sommes-nous?
+              </Button>
             </div>
           </div>
         </div>
@@ -86,6 +91,9 @@ export default function WelcomePageCrew() {
             height={720}
             loading="lazy"
             src={crew}
+            alt={
+              "L'équipe de professionnels souriants spécialisés dans la médiation cognitive, l'apprentissage adapté et le développement de l'enfant, incluant des experts en troubles cognitifs, inclusion et pédagogie adaptée."
+            }
             className="h-auto w-4/5 rounded-xl object-cover"
           />
           <div className="absolute left-1/2 top-1/2 -z-20 w-[140%] -translate-x-1/2 -translate-y-1/2">

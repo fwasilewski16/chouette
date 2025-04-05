@@ -18,7 +18,8 @@ export default function WelcomePageMainMobile() {
   const images = [main1, main2, main3, main4, main5];
 
   return (
-    <div className="sm:hidden">
+    <section className="sm:hidden">
+      <h1 className="sr-only">Bienvenue sur Chouette On Apprend</h1>{" "}
       <div className="sticky top-0 -z-50">
         <Swiper
           slidesPerView={1}
@@ -45,7 +46,7 @@ export default function WelcomePageMainMobile() {
         </Swiper>
       </div>
       <div className="flex w-full flex-col gap-4 bg-[#f9ab48] p-5 font-manrope font-medium tracking-wider text-white">
-        <p className="text-3xl font-medium antialiased">Bienvenue!</p>
+        <h1 className="text-3xl font-medium antialiased">Bienvenue!</h1>
         <p className="max-w-[450px] text-sm">
           Depuis janvier 2012 Chouette On Apprend oeuvre pour le respect des
           différences, l'autonomie et l'épanouissement.
@@ -107,6 +108,6 @@ export default function WelcomePageMainMobile() {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
